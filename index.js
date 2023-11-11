@@ -45,10 +45,34 @@ $(() => {
   })
 
   let now = 'D';
+
+  let pressTimes = [];
+  let average_time = 1;
+
+  setInterval(() => {
+    let currentTime = Date.now();
+    pressTimes = pressTimes.filter(time => currentTime - time <= average_time * 1000); // keep only last 10 seconds
+    let pps = pressTimes.length / average_time; // calculate moving average pps
+    if(pps > 10){
+      $('#running').addClass('fastest');
+    } else if(pps > 5) {
+      $('#running').addClass('fast');
+    } else {
+      $('#running').removeClass('fast').removeClass('fastest');
+    }
+
+    // show pps
+    $('#pps').text(pps.toFixed(0));
+  }, 50);
+
   $('.button').click(function() {
     let { keybind } = this.dataset;
 
     if((keybind == 'A' && now == 'D') || (keybind == 'D' && now == 'A')){
+      // calc pps
+      let currentTime = Date.now();
+      pressTimes.push(currentTime);
+
       this.classList.add('active');
       setTimeout(() => {
         this.classList.remove('active');

@@ -41,18 +41,56 @@ body {
 
 #main {
   display: none;
+  overflow: hidden;
 }
 
 #info {
-  margin: 30px;
+  margin: 10px;
 }
 
-.running {
+#running {
   width: 100%;
   position: relative;
-  margin: auto;
+  margin: 10px auto;
   left: 0;
   right: 0;
+  transform-origin: 50% -50%;
+  transform: rotate(0deg);
+}
+
+#running.fast {
+  animation: fast 1s ease-in-out infinite;
+}
+
+#running.fastest {
+  animation: fastest .8s cubic-bezier(0.11, 0, 0.5, 0) infinite !important;
+}
+
+@keyframes fast {
+  0% {
+    left: 0;
+  }
+  33% {
+    left: -100%;
+  }
+  66% {
+    left: 100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes fastest {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .run {
