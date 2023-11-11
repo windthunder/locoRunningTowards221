@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>毫無意義的奔跑洛可小遊戲</title>
+  <!-- jQuery cdn -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="./index.js"></script>
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <div id="wrapper">
+    <div id="loading">
+      <div id="loading-text">Loading...</div>
+      <div id="loading-progress">0%</div>
+    </div>
+    <div id="main">
+      <div id="info">操作：ADADADADADAD 建議自己找個BGM來搭配</div>
+
+      <div class="running">
+        <img src="./img/running1.png" class="run1 run"><img src="./img/running2.png" style="display: none" class="run2 run"><img src="./img/running3.png" style="display: none" class="run3 run"><img src="./img/running4.png" style="display: none" class="run4 run"><img src="./img/running5.png" style="display: none" class="run5 run"><img src="./img/running6.png" style="display: none" class="run6 run"><img src="./img/running7.png" style="display: none" class="run7 run">
+      </div>
+
+      <div class="button" id="A" data-keybind="A">A</div>
+      <div class="button" id="D" data-keybind="D">D</div>
+    </div>
+  </div>
+</body>
+</html>

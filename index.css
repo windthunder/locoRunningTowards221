@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.button {
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 5px;
+  line-height: 100px;
+  width: 100px;
+  font-size: 40px;
+  position: absolute;
+  text-align: center;
+}
+
+.button.active {
+  background-color: #000;
+  color: #fff;
+}
+
+#A {
+  bottom: 30px;
+  left: 30px;
+}
+
+#D {
+  bottom: 30px;
+  right: 30px;
+}
+
+#wrapper {
+  max-width: 500px;
+  width: 100%;
+  position: fixed;
+  margin: auto;
+  left: 0;
+  right: 0;
+  height: 100%;
+}
+
+#main {
+  /* visibility: hidden; */
+}
+
+#info {
+  margin: 30px 0;
+}
+
+.running {
+  width: 100%;
+  position: relative;
+  margin: auto;
+  left: 0;
+  right: 0;
+}
