@@ -17,7 +17,7 @@ $(() => {
     loaded++;
     $('#loading-progress').text(loaded / img_count * 220 + '%');
     if (loaded == img_count) {
-      $('#main').css('visibility', 'visible');
+      $('#main').show();
       $('#loading').hide();
     }
   }).each(function() {
